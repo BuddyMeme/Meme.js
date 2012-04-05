@@ -1,0 +1,27 @@
+# Projects and things
+*.komodoproject
+*.tmproj
+*.tmproject
+tmtags
+/*.sublime-project
+/manifest.json
+
+# OS X
+.DS_Store*
+.Trashes
+.Spotlight-V100
+._*
+
+# Linux
+.directory
+*~
+
+# Windows
+Thumbs.db
+ehtumbs.db
+Desktop.ini
+
+# In case we had Mercurial...
+/.hg/*
+*/.hg/*
+.hgignore
