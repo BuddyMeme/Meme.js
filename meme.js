@@ -33,6 +33,10 @@ window.Meme = function(image, canvas, topText, bottomText) {
 	Deal with the canvas
 	*/
 
+	// If it's nothing, set it to a dummy value to trigger error
+	if (!canvas)
+		canvas = 0;
+
 	// If it's a string, conver it
 	if (canvas.toUpperCase)
 		canvas = document.getElementById(canvas);
@@ -49,6 +53,10 @@ window.Meme = function(image, canvas, topText, bottomText) {
 	Deal with the image
 	*/
 
+	// If there's no image, set it to a dummy value to trigger an error
+	if (!image)
+		image = 0;
+
 	// Convert it from a string
 	if (image.toUpperCase) {
 		var src = image;
@@ -57,11 +65,12 @@ window.Meme = function(image, canvas, topText, bottomText) {
 	}
 
 	// Set the proper width and height of the canvas
-	var setCanvasDimensions = function() {
-		
+	var setCanvasDimensions = function(w, h) {
+		canvas.width = w;
+		canvas.height = h;
 	};
 	image.onload = function() {
-		
+		setCanvasDimensions(image.width, image.height);
 	};
 
 };
