@@ -1,13 +1,81 @@
+/*
+
+Meme.js
+
+Use one function to generate a meme.
+
+********************************************************************************
+
+Copyright (c) 2012 BuddyMeme
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+window.Meme = function(image, canvas, topText, bottomText) {
+
+	/*
+	Deal with the canvas
+	*/
+
+	// If it's a string, conver it
+	if (canvas.toUpperCase)
+		canvas = document.getElementById(canvas);
+
+	// If it's jQuery or Zepto, convert it
+	if (canvas instanceof $)
+		canvas = canvas[0];
+
+	// Throw error
+	if (!(canvas instanceof HTMLCanvasElement))
+		throw new Error('No canvas selected');
+
+	/*
+	Deal with the image
+	*/
+
+	// Convert it from a string
+	if (image.toUpperCase) {
+		var src = image;
+		image = new Image();
+		image.src = src;
+	}
+
+	// Set the proper width and height of the canvas
+	var setCanvasDimensions = function() {
+		
+	};
+	image.onload = function() {
+		
+	};
+
+};
+
 $(document).ready(function(){
 //todo: dynamic text sizing and multiple rows
 //possible todo: scumbag hats
 
 //initializes a new javascript image, and sets the source to a value passed from php
   var img = new Image();
-  img.src = 'proxy?url=https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc6/270682_2052357142431_1049580821_32284789_3039041_n.jpg';
+  img.src = 'https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc6/270682_2052357142431_1049580821_32284789_3039041_n.jpg';
   //sets the can and context variables of the canvas
   var can = document.getElementById('canvas');
-  var ctx = can.getContext('2d');  
+  var ctx = can.getContext('2d');
 
 //when the image loads, i basically draw the image object onto the canvas element, with no text on it
   img.onload = function(){    	
