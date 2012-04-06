@@ -70,6 +70,9 @@ window.Meme = function(image, canvas, topText, bottomText) {
 	if (!(canvas instanceof HTMLCanvasElement))
 		throw new Error('No canvas selected');
 
+	// Get context
+	var context = canvas.getContext('2d');
+
 	/*
 	Deal with the image
 	*/
@@ -90,10 +93,13 @@ window.Meme = function(image, canvas, topText, bottomText) {
 		canvas.width = w;
 		canvas.height = h;
 	};
+	setCanvasDimensions(image.width, image.height);	
+
+	// When the image loads, put me on the canvas
 	image.onload = function() {
 		setCanvasDimensions(this.width, this.height);
+		context.drawImage(image, 0, 0);
 	};
-	setCanvasDimensions(image.width, image.height);
 
 };
 
