@@ -70,7 +70,7 @@ window.Meme = function(image, canvas, top, bottom) {
 		canvas = document.getElementById(canvas);
 
 	// If it's jQuery or Zepto, convert it
-	if (canvas instanceof $)
+	if (($) && (canvas instanceof $))
 		canvas = canvas[0];
 
 	// Throw error
