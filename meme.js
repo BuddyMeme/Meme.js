@@ -70,7 +70,7 @@ window.Meme = function(image, canvas, topText, bottomText) {
 		canvas.height = h;
 	};
 	image.onload = function() {
-		setCanvasDimensions(image.width, image.height);
+		setCanvasDimensions(this.width, this.height);
 	};
 
 };
