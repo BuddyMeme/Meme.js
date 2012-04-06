@@ -109,7 +109,6 @@ window.Meme = function(image, canvas, top, bottom) {
 	var drawText = function(text, topOrBottom, y) {
 
 		// Variable setup
-		text = $.trim(text);
 		topOrBottom = topOrBottom || 'top';
 		var fontSize = (canvas.height / 8);
 		var x = canvas.width / 2;
