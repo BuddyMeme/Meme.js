@@ -48,7 +48,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 */
 
-window.Meme = function(image, canvas, topText, bottomText) {
+window.Meme = function(image, canvas, top, bottom) {
+
+	/*
+	Default top and bottom
+	*/
+
+	top = top || '';
+	bottom = bottom || '';
 
 	/*
 	Deal with the canvas
@@ -95,10 +102,37 @@ window.Meme = function(image, canvas, topText, bottomText) {
 	};
 	setCanvasDimensions(image.width, image.height);	
 
-	// When the image loads, put me on the canvas
+	/*
+	Do everything else after image loads
+	*/
+
 	image.onload = function() {
+
+		// Set dimensions
 		setCanvasDimensions(this.width, this.height);
+
+		// Draw the image
 		context.drawImage(image, 0, 0);
+
+		// Set up text variables
+		context.fillStyle = 'white';
+		context.strokeStyle = 'black';
+		context.lineWidth = 2;
+		var fontSize = (canvas.height / 8);
+		context.font = fontSize + 'px Impact';
+		context.textAlign = 'center';
+		var center = canvas.width / 2;
+		var topY = fontSize;
+		var bottomY = canvas.height - 10;
+
+		// Draw top
+		context.fillText(top, center, topY);
+		context.strokeText(top, center, topY);
+
+		// Draw bottom
+		context.fillText(bottom, center, bottomY);
+		context.strokeText(bottom, center, bottomY);
+
 	};
 
 };
