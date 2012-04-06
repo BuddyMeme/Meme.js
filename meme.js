@@ -104,21 +104,6 @@ window.Meme = function(image, canvas, topText, bottomText) {
 };
 
 /*
-$(document).ready(function(){
-//todo: dynamic text sizing and multiple rows
-//possible todo: scumbag hats
-
-//initializes a new javascript image, and sets the source to a value passed from php
-  var img = new Image();
-  img.src = 'https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-snc6/270682_2052357142431_1049580821_32284789_3039041_n.jpg';
-  //sets the can and context variables of the canvas
-  var can = document.getElementById('canvas');
-  var ctx = can.getContext('2d');
-
-//when the image loads, i basically draw the image object onto the canvas element, with no text on it
-  img.onload = function(){    	
-  	ctx.drawImage(img,0,0);
-  };
 
 function changeFontSize(newFontSize,multiplier){
 	if(fontSize == origFontSize){
