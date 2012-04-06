@@ -75,6 +75,7 @@ window.Meme = function(image, canvas, topText, bottomText) {
 
 };
 
+/*
 $(document).ready(function(){
 //todo: dynamic text sizing and multiple rows
 //possible todo: scumbag hats
@@ -189,7 +190,7 @@ $('#post').click(function(){
 
 /*  for (var i = 0, dataURI; dataURI = dataURI[i]; ++i) {
     formData.append(dataURI.name, dataURI);
-  } */
+  }
 /*  formData.append('source', dataURI.replace(/^data:image\/\w+;base64,/, ""));
   formData.append('message', 'test');
 
@@ -208,7 +209,6 @@ $('#post').click(function(){
       alert('Post ID: ' + response.id);
     }
   });
-*/
 /*  data = {data:dataURI};
   $.ajax({
     type: 'POST',
@@ -216,7 +216,8 @@ $('#post').click(function(){
     data: data,
     success: function(){ alert('woohoo')},
   });
-*/
 });
 
 });
+
+*/
