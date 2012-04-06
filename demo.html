@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Meme.js demo</title>
+
+	<!-- Demo CSS -->
+	<style>
+
+	body {
+		font-family: sans-serif;
+		text-align: center;
+	}
+
+	#top-line, #bottom-line {
+		padding: .5em;
+		border: 1px solid #999;
+		font: inherit;
+	}
+
+	#canvas {
+		display: block;
+	}
+
+	</style>
+
+	<!-- Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="meme.js"></script>
+	<script>
+
+	$.fn.ready(function() {
+
+		Meme();
+	
+	});
+
+	</script>
+
+</head>
+
+<body>
+
+	<h1>Meme.js demo</h1>
+
+	<input id="top-line" placeholder="top line">
+	<input id="bottom-line" placeholder="bottom line">
+
+	<canvas id="canvas"></canvas>
+
+</body>
+</html>
