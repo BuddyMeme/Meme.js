@@ -34,6 +34,10 @@
 
 		Meme('example.jpg', 'canvas');
 
+		$('#top-line, #bottom-line').keyup(function() {
+			Meme('example.jpg', 'canvas', $('#top-line').val(), $('#bottom-line').val());
+		});
+
 	});
 
 	</script>
